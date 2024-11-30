@@ -15,8 +15,10 @@
 
     <div class="hero d-flex justify-content-center align-items-center">
 
-    <div class="center box">
-        <h1 class="text-info ">Welcome to Pabau Voting System</h1>
+    <div class="center box text-center">
+        <h1 class="text-black fs-1">Welcome to Pabau Voting System</h1>
+        <p class="text-white fs-3">If you haven't voted yet for the best working employee in our company don't wait go vote!</p>
+        <a class="btn btn-info btn-md text-center"  href="vote.php">Vote</a>
     </div>
 
     </div>

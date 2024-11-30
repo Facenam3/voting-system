@@ -6,8 +6,13 @@ h1,h2,h3,h4,h5,h6,p {
     margin: 0;
 }
 
-.hero {
+.hero,
+.vote {
     height: calc(100vh - 131px);
+}
+
+.hero {
+   
     background-image: url(https://as1.ftcdn.net/v2/jpg/02/96/74/64/1000_F_296746476_F0wDElEXSb0Rd1tyDnsCBLVBHGAsJm3O.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -15,6 +20,6 @@ h1,h2,h3,h4,h5,h6,p {
 }
 
 .box {
-    border: 3px solid whitesmoke;
-    padding: 25px 40px;
+    border: 3px solid rgb(0, 204, 255);
+    padding: 20px 40px;
 }
