@@ -1,3 +1,10 @@
+<?php 
+    require_once __DIR__ . '/autoload.php';  
+
+    $employees = $employee->getAllEmployee();
+    $categories = $category->getAllCategory();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,30 +23,22 @@
     <div class="container vote">
         <h1 class="text-center mb-3">The Voting System</h1>
         <div class="d-flex justify-content-center aling-items-center">
-        <form action="#" method="POST" class="w-75 mt-3">
+        <div id="alert" class="alert alert-info text-center w-75" style="margin-top:20px; display:none;">
+            <button type="button" class="btn-close float-end" aria-label="Close" onclick="$('#alert').hide();"></button>
+            <span id="alert_message"></span>
+        </div>
+        <form action="#" method="POST" class="w-75 mt-3" id="addVote">
             <div class="mb-3">
                 <label for="category_id" class="mb-3">Voting Category</label>
-                <select class="form-select" name="category_id">
-                <option selected>Select your category</option>
-                <option value="makes_work_fun">Makes Work Fun</option>
-                <option value="team_player">Team Player</option>
-                <option value="culture_champion">Culture Champion</option>
-                <option value="difference_maker">Difference Maker</option>
-                </select>
+                <select class="form-select" name="category_id" id="category_id">
             </div>
             <div class="mb-3">
-                <label for="the_nominee" class="mb-3">Eployee</label>
-                <select class="form-select" name="the_nominee">
-                <option selected>Select your nominee</option>
-                <option value="john_doe">John Doe</option>
-                <option value="jane_doe">Jane Doe</option>
-                <option value="max_schawrz">Max Schwazr</option>
-                <option value="johny_depp">Johny Depp</option>
-                </select>
+                <label for="employee_id" class="mb-3">Eployee</label>
+                <select class="form-select" name="employee_id" id="employee_id" >
             </div>
             <div class="mb-3">
                 <label for="voted_by" class="form-label">Voted By</label>
-                <input type="text" class="form-control" id="voted_by" placeholder="Enter Your Name">
+                <input type="text" class="form-control" name="voted_by" id="voted_by" placeholder="Enter Your Name">
             </div>
             <div class="mb-3">
                 <label for="comment" class="form-label">Comment</label>
