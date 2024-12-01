@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,8 +22,16 @@
 
     <div class="center box text-center">
         <h1 class="text-black fs-1">Welcome to Pabau Voting System</h1>
-        <p class="text-white fs-3">If you haven't voted yet for the best working employee in our company don't wait go vote!</p>
-        <a class="btn btn-info btn-md text-center"  href="vote.php">Vote</a>
+
+        <?php 
+          if(!empty($_SESSION['email'])){
+            echo "<p class='text-dark fs-5 my-2'>Have you cast your vote for the most outstanding employee of the month? Don't miss your chance to make your voice heard and show appreciation for the hard work around you!</p>";
+            echo "<a class='btn btn-info' href='vote.php'>Vote Now</a>";
+          } else {
+            echo "<p class='text-dark fs-5 my-2'>Have you cast your vote for the most outstanding employee of the month? Don't miss your chance to make your voice heard and show appreciation for the hard work around you! Please log in to vote.</p>";
+            echo "<a class='btn btn-info' href='login.php'>Login to Vote</a>";
+          }
+        ?>
     </div>
 
     </div>

@@ -20,7 +20,7 @@ $(document).ready(function(){
             data: addVote,
             dataType: 'json',
             success: function(response){
-                console.log(response);
+                // console.log(response);
                 if(response.error){
                     $('#alert').show();
                     $("#alert_message").html(response.message);
@@ -36,7 +36,30 @@ $(document).ready(function(){
         });
     });
 
-     
+});
+
+$(document).on("submit", "#loginForm", function(e){
+    e.preventDefault();
+
+    const formData = $(this).serialize();
+    
+    $.ajax({
+        method: "POST",
+        url: "login-user.php",
+        data: formData,
+        dataType: 'json',
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function(response){
+            if(response.status === "success"){
+                $('#alert_message').html(response.message);
+                window.location.href = "vote.php";
+            } else {
+                $('error').text(response.message).show();
+            }
+        }
+    });
 });
 
 let currentPage = 1;
@@ -130,7 +153,7 @@ function fetchTopVoters() {
         dataType: "json",
         success: function(response){
 
-            console.log(response);
+            // console.log(response);
             const voters = response.voters;
 
             let rows = '';

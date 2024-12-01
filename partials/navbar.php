@@ -10,12 +10,17 @@
             <li class="nav-item ">
                 <a class="nav-link text-black link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="vote.php">Vote</a>
             </li>
-            <!-- <li class="nav-item">
-                <a class="btn btn-info mx-2"  href="vote.php">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn btn-info"  href="vote.php">Register</a>
-            </li> -->
+
+            <?php
+                 if (isset($_SESSION['email']) && $_SESSION['email']) 
+                {                   
+                     echo " <li class='nav-item'><a class='btn btn-info mx-2' href='login.php'>Logout</a></li> ";
+           
+                } else {
+
+                    echo " <li class='nav-item'><a class='btn btn-info mx-2' href='logout.php'>Login</a></li> ";
+                }
+            ?>
         </ul>
     </div>
 </nav>

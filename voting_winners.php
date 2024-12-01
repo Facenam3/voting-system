@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +21,7 @@
           <table class="table table-bordered table-hover mt-4">
               <thead class="table-info">
                   <tr> 
-                      <th>Employee</th>
+                      <th>Employe</th>
                       <th>Category</th>
                       <th>Total Votes</th>
                   </tr>
