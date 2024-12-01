@@ -5,7 +5,7 @@
         </a>
         <ul class="nav justify-content-end">
             <li class="nav-item ">
-                <a class="nav-link text-black link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="#">Voting Results</a>
+                <a class="nav-link text-black link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="voting_results.php">Voting Results</a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link text-black link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="vote.php">Vote</a>
