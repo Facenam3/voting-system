@@ -4,7 +4,7 @@ require_once __DIR__ . "/autoload.php";
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
 
-    $output[] = '';
+    $output = array('error' => false);
 
     if(
         isset($_POST['category_id']) && !empty($_POST['category_id']) && 
@@ -20,17 +20,11 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
         $voting = $votes->insertVote($category_id,$employee_id,$voted_by, $comment);
     
         if($voting){
-            $output = [
-                'error' => false,
-                'message' => "Successfully voted for your nominee" 
-                ] 
-            ;
+           
+            $output['message'] = "You have voted successfully.";
         } else {
-            $output = [
-                'error' => true,
-                'message' => "Something went wrong. Please try again."
-                ] 
-            ;
+            $output['error'] = true;
+            $output['message'] = "Something went wrong. You can not vote now.";
         }
     }
 }
