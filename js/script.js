@@ -20,7 +20,7 @@ $(document).ready(function(){
             data: addVote,
             dataType: 'json',
             success: function(response){
-                // console.log(response);
+                console.log(response);
                 if(response.error){
                     $('#alert').show();
                     $("#alert_message").html(response.message);

@@ -11,11 +11,12 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $authenticate = $userInstance->authenticate($email, $password);
-
-    if($authenticate){
+    $user = $userInstance->authenticate($email, $password);
+    
+    if($user){
         $_SESSION['email'] = $email;
-
+        $_SESSION['fullname'] = $user['fullname'];
+        
         echo json_encode([
             'status' => 'success',
             'message' => "Login Successful"

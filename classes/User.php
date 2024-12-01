@@ -31,7 +31,7 @@ class User extends database
         $user = $pdo_statement->fetch();
 
         if(!empty($user) && password_verify($password, $user['password'])) {
-            return true;
+            return $user;
         }
 
         return false;

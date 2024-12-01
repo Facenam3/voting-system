@@ -21,7 +21,7 @@
     <div class="hero d-flex justify-content-center align-items-center">
 
     <div class="center box text-center">
-        <h1 class="text-black fs-1">Welcome to Pabau Voting System</h1>
+        <h1 class="text-black fs-1">Pabau Monthly Nominations</h1>
 
         <?php 
           if(!empty($_SESSION['email'])){

@@ -8,8 +8,28 @@ class Votes extends database
 
     public function insertVote($category_id, $employee_id, $voted_by, $comment){
         $pdo = $this->instance;
-        $sql = "INSERT INTO votes (category_id, employee_id, voted_by, comment) VALUES (:category_id, :employee_id, :voted_by, :comment)";
 
+        // $employeeQuery = "SELECT name FROM eployees WHERE id = :employee_id";
+        // $employeeStmt = $pdo->prepare($employeeQuery);
+        // $employeeStmt->bindParam(":employee_id", $employee_id);
+        // $employeeStmt->execute();
+
+        // $employe = $employeeStmt->fetch(PDO::FETCH_ASSOC);
+
+        // if (!$employe) {
+        //     return array('error' => true, 'message' => "Employee not found.");
+        // }
+
+        // $employeName = $employe['name'];
+
+        // $voted_by_normalized = strtolower(trim($voted_by));
+        // $employeeName_normalized = strtolower(trim($employeName));
+
+        // if ($voted_by_normalized == $employeeName_normalized) {
+        //     return array('error' => true, 'message' => "You cannot vote for yourself.");
+        // }
+
+        $sql = "INSERT INTO votes (category_id, employee_id, voted_by, comment) VALUES (:category_id, :employee_id, :voted_by, :comment)";
         $pdo_statement = $pdo->prepare($sql);
         $pdo_statement->bindParam(":category_id", $category_id);
         $pdo_statement->bindParam(":employee_id", $employee_id);
@@ -25,6 +45,12 @@ class Votes extends database
         $result = $pdo_statement->rowCount();
 
         return $result;
+
+    //    if ($result) {
+    //     return array('error' => false, 'message' => "You have voted successfully.");
+    // } else {
+    //     return array('error' => true, 'message' => "Failed to insert the vote.");
+    // }
     }
 
     public function countVotes() {

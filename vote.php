@@ -40,9 +40,8 @@
                 <select class="form-select" name="employee_id" id="employee_id" >
             </div>
             <div class="mb-3">
-                <label for="voted_by" class="form-label">Voted By</label>
-                <input type="text" class="form-control" name="voted_by" id="voted_by" placeholder="Enter Your Name">
-            </div>
+                <input type="hidden" name="voted_by" id="voted_by" value="<?= $_SESSION['fullname'];?>" >
+             </div>
             <div class="mb-3">
                 <label for="comment" class="form-label">Comment</label>
                 <textarea class="form-control" name="comment" id="comment" rows="3"></textarea>
